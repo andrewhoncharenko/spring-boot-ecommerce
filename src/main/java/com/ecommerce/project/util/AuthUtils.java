@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthUtil {
+public class AuthUtils {
     @Autowired
     UserRepository userRepository;
 

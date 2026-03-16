@@ -8,9 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Data
 @NoArgsConstructor
@@ -40,8 +37,8 @@ public class Address {
     @Size(min = 6, message = "PIN code must be at least 6 characters")
     private String pinCode;
     @ToString.Exclude
-    @ManyToMany(mappedBy = "addresses")
-    private List<User>users = new ArrayList<>();
+    @ManyToOne
+    private User user;
 
     public Address(String streetName, String buildingName, String city, String state, String country, String pinCode) {
         this.streetName = streetName;
